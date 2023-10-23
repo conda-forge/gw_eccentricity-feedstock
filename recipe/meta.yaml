@@ -24,6 +24,8 @@ requirements:
     - scipy
     - h5py
     - lalsuite
+    - caltechdata-api
+    - pylatexenc
     - sxs
 
 test:

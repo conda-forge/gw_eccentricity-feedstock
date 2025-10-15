@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 6
+  number: 7
   noarch: python
 
 requirements:
@@ -29,8 +29,6 @@ requirements:
     - pylatexenc
     - sxs
     - scri
-    - pip
-        - polyrat
 test:
   imports:
     - gw_eccentricity

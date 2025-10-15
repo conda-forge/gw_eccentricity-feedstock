@@ -28,6 +28,9 @@ requirements:
     - lalsuite
     - pylatexenc
     - sxs
+    - scri
+    - pip
+        - polyrat
 test:
   imports:
     - gw_eccentricity

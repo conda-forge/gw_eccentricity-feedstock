@@ -11,13 +11,15 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   noarch: python
 
 requirements:
   host:
     - python >=3.6
     - pip
+    - build
+    - setuptools
   run:
     - python >=3.6
     - numpy

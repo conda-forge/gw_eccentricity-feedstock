@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 4
   noarch: python
 
 requirements:
@@ -20,7 +20,6 @@ requirements:
     - pip
     - python-build
     - setuptools
-    - caltechdata-api
   run:
     - python >=3.6
     - numpy
@@ -29,6 +28,9 @@ requirements:
     - lalsuite
     - pylatexenc
     - sxs
+    - pip
+    - pip:
+        - caltechdata-api
 
 test:
   imports:

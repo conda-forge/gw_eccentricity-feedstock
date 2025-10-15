@@ -22,6 +22,7 @@ requirements:
     - pip
     - python-build
     - setuptools
+    - build
   run:
     - python >={{ python_min }}
     - numpy

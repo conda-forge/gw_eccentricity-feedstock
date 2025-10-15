@@ -10,8 +10,10 @@ source:
   sha256: debf218b19d752feab06c1178740ea93f28e0637a53c07268811fb4f82610db9
 
 build:
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 7
+  script: |
+      {{ PYTHON }} -m pip install --no-deps polyrat
+      {{ PYTHON }} -m pip install . -vv
+  number: 8
   noarch: python
 
 requirements:

@@ -13,7 +13,7 @@ source:
 build:
   script: |
       {{ PYTHON }} -m pip install . -vv
-  number: 11
+  number: 12
   noarch: python
 
 requirements:
@@ -31,7 +31,6 @@ requirements:
     - pylatexenc
     - sxs
     - scri
-    - bibtexparser
 test:
   requires:
     - python {{ python_min }}

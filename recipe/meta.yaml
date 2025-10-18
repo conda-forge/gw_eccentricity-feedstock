@@ -31,14 +31,12 @@ requirements:
     - sxs
     - scri
 test:
-  imports:
-    - gw_eccentricity
-  commands:
-    - pip check
   requires:
     - pip
-  pip:
-    - git+https://github.com/jeffrey-hokanson/PolyRat
+  commands:
+    - pip install polyrat
+    - python -c "import gw_eccentricity"
+    - pip check
 
 about:
   home: https://github.com/vijayvarma392/gw_eccentricity

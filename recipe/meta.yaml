@@ -1,5 +1,6 @@
 {% set name = "gw_eccentricity" %}
 {% set version = "2.0.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -17,12 +18,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python {{ python_min }}
     - pip
     - python-build
     - setuptools
   run:
-    - python >=3.6
+    - python >={{ python_min }}
     - numpy
     - scipy
     - h5py
@@ -30,8 +31,10 @@ requirements:
     - pylatexenc
     - sxs
     - scri
+    - bibtexparser
 test:
   requires:
+    - python {{ python_min }}
     - pip
   commands:
     - pip install polyrat

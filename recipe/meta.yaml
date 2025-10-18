@@ -13,7 +13,7 @@ source:
 build:
   script: |
       {{ PYTHON }} -m pip install . -vv
-  number: 10
+  number: 11
   noarch: python
 
 requirements:
@@ -38,6 +38,7 @@ test:
     - pip
   commands:
     - pip install polyrat
+    - pip install "bibtexparser>=2.0.0b8"
     - python -c "import gw_eccentricity"
     - pip check
 

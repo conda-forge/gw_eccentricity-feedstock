@@ -38,6 +38,7 @@ test:
   commands:
     - pip install polyrat
     - pip install "bibtexparser>=2.0.0b8"
+    - pip install "juliacall>=0.9.30"
     - python -c "import gw_eccentricity"
     - pip check
 

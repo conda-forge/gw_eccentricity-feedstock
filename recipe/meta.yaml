@@ -1,5 +1,5 @@
 {% set name = "gw_eccentricity" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gw_eccentricity-{{ version }}.tar.gz
-  sha256: debf218b19d752feab06c1178740ea93f28e0637a53c07268811fb4f82610db9
+  sha256: 070b736b314bb05b0cf1aae5dc4650c198c9bee81a13521d8aef3058e540a364
 
 build:
   script: |
       {{ PYTHON }} -m pip install . -vv
-  number: 12
+  number: 0
   noarch: python
 
 requirements:

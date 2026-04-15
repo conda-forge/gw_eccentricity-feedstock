@@ -21,7 +21,7 @@ outputs:
       noarch: python
     requirements:
       host:
-        - python =={{ python_min }}
+        - python {{ python_min }}
         - pip
         - python-build
         - setuptools

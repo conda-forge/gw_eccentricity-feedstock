@@ -1,3 +1,4 @@
+    
 {% set name = "gw_eccentricity" %}
 {% set version = "2.1.0" %}
 {% set python_min = "3.10" %}
@@ -16,12 +17,11 @@ build:
 outputs:
   - name: {{ name|lower }}
     build:
-      script: |
-        {{ PYTHON }} -m pip install . -vv
+      script: python -m pip install . -vv --no-deps
       noarch: python
     requirements:
       host:
-        - python {{ python_min }}
+        - python =={{ python_min }}
         - pip
         - python-build
         - setuptools

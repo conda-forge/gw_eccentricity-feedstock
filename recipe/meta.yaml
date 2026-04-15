@@ -2,44 +2,62 @@
 {% set version = "2.1.0" %}
 {% set python_min = "3.10" %}
 
-package:
-  name: {{ name|lower }}
-  version: {{ version }}
-
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/gw_eccentricity-{{ version }}.tar.gz
   sha256: 38dd6b60a3892051cd9e120dbe7fcc731fbca76948776dea4ef5ac0bf58b9f79
 
 build:
-  script: |
-    {{ PYTHON }} -m pip install . -vv
   number: 0
-  noarch: python
 
-requirements:
-  host:
-    - python {{ python_min }}
-    - pip
-    - python-build
-    - setuptools
-  run:
-    - python >={{ python_min }}
-    - numpy
-    - scipy
-    - h5py
-    - lalsuite
-    - pylatexenc
-    - sxs
-    - scri
-test:
-  requires:
-    - python {{ python_min }}
-    - pip
-  commands:
-    - pip install "bibtexparser>=2.0.0b8"
-    - pip install "juliacall>=0.9.30"
-    - python -c "import gw_eccentricity"
-    - pip check
+outputs:
+  - name: {{ name|lower }}
+    build:
+      script: |
+        {{ PYTHON }} -m pip install . -vv
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+        - pip
+        - python-build
+        - setuptools
+      run:
+        - python >={{ python_min }}
+        - numpy
+        - scipy
+        - h5py
+        - lalsuite
+        - pylatexenc
+        - sxs
+        - scri
+    test:
+      requires:
+        - python {{ python_min }}
+        - pip
+      commands:
+        - pip install "bibtexparser>=2.0.0b8"
+        - pip install "juliacall>=0.9.30"
+        - python -c "import gw_eccentricity"
+        - pip check
+
+  - name: {{ name|lower }}-postprocess
+    build:
+      noarch: python
+    requirements:
+      run:
+        - {{ pin_subpackage(name|lower, exact=True) }}
+        - python >={{ python_min }}
+        - pandas
+        - bilby
+        - joblib
+        - tqdm
+        - pyarrow
+        - mpi4py
+    test:
+      requires:
+        - python {{ python_min }}
+      commands:
+        - python -c "import gw_eccentricity.postprocess"
 
 about:
   home: https://github.com/vijayvarma392/gw_eccentricity

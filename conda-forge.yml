@@ -4,7 +4,6 @@ github:
 conda_build:
   error_overlinking: true
 conda_forge_output_validation: true
-extra:
-  outputs:
-    - gw_eccentricity
-    - gw_eccentricity-postprocess
+outputs:
+  - gw_eccentricity
+  - gw_eccentricity-postprocess

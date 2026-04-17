@@ -27,6 +27,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gw__eccentricity-green.svg)](https://anaconda.org/conda-forge/gw_eccentricity) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gw_eccentricity.svg)](https://anaconda.org/conda-forge/gw_eccentricity) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gw_eccentricity.svg)](https://anaconda.org/conda-forge/gw_eccentricity) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gw_eccentricity.svg)](https://anaconda.org/conda-forge/gw_eccentricity) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gw__eccentricity--postprocess-green.svg)](https://anaconda.org/conda-forge/gw_eccentricity-postprocess) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gw_eccentricity-postprocess.svg)](https://anaconda.org/conda-forge/gw_eccentricity-postprocess) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gw_eccentricity-postprocess.svg)](https://anaconda.org/conda-forge/gw_eccentricity-postprocess) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gw_eccentricity-postprocess.svg)](https://anaconda.org/conda-forge/gw_eccentricity-postprocess) |
 
 Installing gw_eccentricity
 ==========================
@@ -38,16 +39,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `gw_eccentricity` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `gw_eccentricity, gw_eccentricity-postprocess` can be installed with `conda`:
 
 ```
-conda install gw_eccentricity
+conda install gw_eccentricity gw_eccentricity-postprocess
 ```
 
 or with `mamba`:
 
 ```
-mamba install gw_eccentricity
+mamba install gw_eccentricity gw_eccentricity-postprocess
 ```
 
 It is possible to list all of the versions of `gw_eccentricity` available on your platform with `conda`:
